@@ -2,9 +2,22 @@
 // *** NOTES ***
 
 // If you're returning an array of elements inside of React, which in this project I am with 
-// the map function in the App.jsx file on line #31, you need to make sure that each element
-// at the very top level has a key property with a unique identifier, which in this project 
-// is unique to each one of the To-Do's
+// the todos.map() function in the App.jsx file (which is also copied in this file in the example 
+// below), you need to make sure that each element at the very top level has a key property with a 
+// unique identifier, which in this project is unique to each one of the To-Do's.
+
+//      EXAMPLE: (from App.jsx): {todos.map(todo => {
+//                                  return (
+//                                      <li key={todo.id}>
+//                                          <label>
+//                                              <input type="checkbox" checked={todo.completed} 
+//                                              onChange={e => toggleTodo(todo.id, e.target.checked)} />
+//                                              {todo.title}
+//                                          </label>
+//                                          <button className="btn btn-danger">Delete</button>
+//                                      </li>
+//                                  )
+//                               })}
 
 // The reason that you need to do this inside of React is because hypothetically if you wanted 
 // to edit, delete, or modify one of the To-Do's in the list but you didn't want to change any 
