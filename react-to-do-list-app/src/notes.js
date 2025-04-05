@@ -36,7 +36,27 @@
 // property with a unique identifier because if you delete elements in the array it could really 
 // mess up different things in your code.
 
+// The useEffect Hook doesn't return anything but it takes a function as it's argument and this 
+// function for the useEffect is essentially saying to run this function every time the objects 
+// inside the array of the second property change.
 
+//      EXAMPLE: (from App.jsx): useEffect(() => {
+//                                  localStorage.setItem("ITEM", JSON.stringify(todos))
+//                               }, [todos])
+
+// In the example above, everytime the todos change, you want to run the code that's inside the function, 
+// and this code is just going to go to the local storage and you want to set the ITEMS property to the 
+// JSON stringified version of the todos 
+// 
+// So essentially to break down what's really happening, the useEffect says to run the function (seen below) 
+// that we pass to it, every single time any of the values in the todos array change.
+//      Function (from above example): () => {localStorage.setItem("ITEM", JSON.stringify(todos))}
+
+// So in this case anytime the todos change, this function gets called and this function is just taking the 
+// todos and storing them inside of localStorage. 
+
+// Essentially this code is now storing the information in localStorage but you aren't actually getting the 
+// information from localStorage.
 
 
 
