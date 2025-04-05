@@ -61,10 +61,18 @@
 // To get your information from localStorage, you're going to have to call the useState Hook but instead of 
 // passing it a default value you're going to pass it a function.
 
+//      EXAMPLE: (from App.jsx): const [todos, setTodos] = useState(() => {
+//                                  const localValue = localStorage.getItem("ITEMS")
+//                                  if (localValue == null) return []
+//                              
+//                                  return JSON.parse(localValue)
+//                               })
+
 // The function version of useState works exactly the same since whatever you return from the function is your 
 // default value.
 
 // NOTE: Hooks in React need to be called at the top of your function. You cannot put a Hook conditionally.
+
 //      EXAMPLE: if (true) {
 //                  useEffect(() => {
 //                      localStorage.setItem("ITEMS", JSON.stringify(todos))
