@@ -58,7 +58,25 @@
 // Essentially this code is now storing the information in localStorage but you aren't actually getting the 
 // information from localStorage.
 
+// To get your information from localStorage, you're going to have to call the useState Hook but instead of 
+// passing it a default value you're going to pass it a function.
 
+// The function version of useState works exactly the same since whatever you return from the function is your 
+// default value.
+
+// NOTE: Hooks in React need to be called at the top of your function. You cannot put a Hook conditionally.
+//      EXAMPLE: if (true) {
+//                  useEffect(() => {
+//                      localStorage.setItem("ITEMS", JSON.stringify(todos))
+//                  }, [todos])
+//               } 
+
+// If you do this then immediately your code is going to actually break and in your console you will get an error 
+// that essentially says that you cannot render hooks conditionally. 
+// 
+// You cannot put Hooks inside of if statements, Loops, and you cannot put them after returns. They have to essentially 
+// be put at the very top of your file and they have to always run the same number of hooks every single time and that's 
+// just one of the rules of Hooks.
 
 
 
